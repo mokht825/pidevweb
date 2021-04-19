@@ -1,0 +1,35 @@
+{% extends 'admin/baseBack.html.twig' %}
+
+{% block title %}TypeSport{% endblock %}
+
+{% block body %}
+    <div style="width: 100px; height: 100px;" > <h1>{{ type_sport.nom }} </h1>
+    </div>
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ type_sport.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ type_sport.nom }}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{ type_sport.color }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <a class="btn btn-primary btn-xs" href="{{ path('type_sport_edit', {'id': type_sport.id}) }}"><i class="fa fa-pencil"></i></a>
+
+    {{ include('admin/type_sport/_delete_form.html.twig') }}
+
+
+
+    <a class="btn btn-primary btn-xs"style=""  href="{{ path('type_sport_index') }}">back to list</a>
+{% endblock %}

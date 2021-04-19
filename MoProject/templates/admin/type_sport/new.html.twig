@@ -1,0 +1,11 @@
+{% extends 'admin/baseBack.html.twig' %}
+
+{% block title %}New Diplome{% endblock %}
+
+{% block body %}
+    <h1>Create new Diplome</h1>
+
+    {{ include('admin/type_sport/_form.html.twig') }}
+
+    <a href="{{ path('type_sport_index') }}">back to list</a>
+{% endblock %}
