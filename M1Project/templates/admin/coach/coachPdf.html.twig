@@ -1,0 +1,43 @@
+
+{% block body %}
+
+<html>
+<head>
+    <style type='text/css'>
+
+    </style>
+</head>
+<body style="color: black;
+    display: table;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    text-align: center;">
+<div style="border: 20px solid tan;
+    width: 750px;
+    height: 563px;
+
+    vertical-align: middle;">
+    <div class="logo" style="color: tan;">
+        Sport Type : {{ coach.typesesport.nom }}
+    </div>
+
+    <div class="marquee" style=" color: tan;font-size: 48px; margin: 20px;">
+        Certificate of Completion
+    </div>
+
+    <div class="assignment" style="margin: 20px;">
+        This certificate is presented to :
+    </div>
+
+    <div class="person" style="border-bottom: 2px solid black;font-size: 32px;font-style: italic;width: 400px;">
+        {{ coach.Nomcoach }} <br> {{ coach.Prenomcoach }}
+    </div>
+
+    <div class="reason" style=" margin: 20px;">
+        For Being a good<br/>
+        coach
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
