@@ -1,0 +1,55 @@
+{% extends 'admin/baseBack.html.twig' %}
+
+{% block title %}Coach{% endblock %}
+
+{% block body %}
+    <!-- Flashy depends on jQuery -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Load Flashy default JavaScript -->
+    <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+    {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+    <div style="width: 100px; height: 100px;" > <h1>{{ coach.Nomcoach }}  {{ coach.Prenomcoach }}</h1>
+        </div>
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ coach.Idcoach }}</td>
+            </tr>
+            <tr>
+                <th>Nomcoach</th>
+                <td>{{ coach.Nomcoach }}</td>
+            </tr>
+            <tr>
+                <th>Prenomcoach</th>
+                <td>{{ coach.Prenomcoach }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ coach.Genre }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ coach.Disponibilite }}</td>
+            </tr>
+            <tr>
+                <th>Diplome</th>
+                <td> {{ coach.typesesport.nom }}</td>
+            </tr>
+            <tr>
+                <th>Localisation</th>
+                <td>{{ coach.Localisation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <a class="btn btn-primary btn-xs" href="{{ path('coach_edit', {'Idcoach': coach.Idcoach}) }}"><i class="fa fa-pencil"></i></a>
+
+    {{ include('admin/coach/_delete_form.html.twig') }}
+    <a class="btn btn-primary btn-xs" style = "margin-left: 1100px;" href="{{ path('coach_index') }}"><i class="fa fa-arrow-circle-left"></i></a>
+
+{% endblock %}
