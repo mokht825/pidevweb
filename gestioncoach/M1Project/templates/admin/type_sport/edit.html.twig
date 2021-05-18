@@ -1,0 +1,13 @@
+{% extends 'admin/baseBack.html.twig' %}
+
+{% block title %}Edit TypeSport{% endblock %}
+
+{% block body %}
+    <h1>Edit TypeSport</h1>
+
+    {{ include('admin/type_sport/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('type_sport_index') }}">back to list</a>
+
+    {{ include('admin/type_sport/_delete_form.html.twig') }}
+{% endblock %}

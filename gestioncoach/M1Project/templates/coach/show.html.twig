@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %}Coachs{% endblock %}
+
+{% block body %}
+
+
+    <div class="row mt-20">
+        <div class="pull-left text-center" href="#!">
+            <img class="media-object user-img" src="/uploads/images/coach.png" alt="Image">
+        </div>
+        <div class="col-md-7">
+            <div class="single-product-details">
+                <h2>{{ coach.Nomcoach }}  {{ coach.Prenomcoach }}</h2>
+                <p class="product-price">{{ coach.typesesport.nom }}</p>
+                <div class="product-category">
+                    <span>Genre:</span> {{ coach.Genre }}
+                </div>
+                <br>
+
+                <div class="product-category">
+                    <span>Disponibilite:</span> {{ coach.Disponibilite }}
+                </div>
+                <br>
+                <div class="product-category">
+                    <span>Localisation:</span> {{ coach.Localisation }}
+                </div>
+                <br>
+
+
+
+                <a href="{{ path('coach_indexC') }}" class="btn btn-main mt-20">Back To list</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

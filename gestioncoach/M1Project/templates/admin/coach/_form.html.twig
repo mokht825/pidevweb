@@ -1,0 +1,112 @@
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $('#coach_Save').click(function () {
+
+            var nom =$('#coach_Nomcoach').val();
+
+            var prenom =$('#coach_Prenomcoach').val();
+            var genre =$('#coach_Genre').val();
+            var dispo =$('#coach_Disponibilite').val();
+            var loca =$('#coach_Localisation').val();
+
+
+            if ((nom.length<3)||((nom.length>255)))
+            {
+                swal({
+                    title: 'Error!',
+                    text: 'nom:il faut au moin 3 caractere et max 15',
+                    icon: 'error',
+                    button: {
+                        text: "Continue",
+                        value: true,
+                        visible: true,
+                        className: "btn btn-primary"
+                    }
+                });
+                return false;
+
+
+            }else if ((prenom.length<3)||((prenom.length>255)))
+            {
+                swal({
+                    title: 'Error!',
+                    text: 'prenom:il faut au moin 3 caractere et max 255',
+                    icon: 'error',
+                    button: {
+                        text: "Continue",
+                        value: true,
+                        visible: true,
+                        className: "btn btn-primary"
+                    }
+                });
+                return false;
+
+            }
+            else if((genre.length<5)||((genre.length>255)))
+            {
+                swal({
+                    title: 'Error!',
+                    text: 'Genre:il faut que le genre soit pas null ',
+                    icon: 'error',
+                    button: {
+                        text: "Continue",
+                        value: true,
+                        visible: true,
+                        className: "btn btn-primary"
+                    }
+                });
+                return false;
+
+            }            else if((dispo.length<5)||((dispo.length>255)))
+            {
+                swal({
+                    title: 'Error!',
+                    text: 'disponibilité:il faut que la disponibilité ne soit pas null e',
+                    icon: 'error',
+                    button: {
+                        text: "Continue",
+                        value: true,
+                        visible: true,
+                        className: "btn btn-primary"
+                    }
+                });
+                return false;
+
+            }
+            else if((loca.length<5)||((loca.length>255)))
+            {
+                swal({
+                    title: 'Error!',
+                    text: 'localisation:il faut que la localisation ne soit pas null e',
+                    icon: 'error',
+                    button: {
+                        text: "Continue",
+                        value: true,
+                        visible: true,
+                        className: "btn btn-primary"
+                    }
+                });
+                return false;
+
+            }
+
+
+
+        });
+
+
+    });
+
+</script>
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {{ form_widget(form) }}
+{{ form_end(form) }}
+
+
